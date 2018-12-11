@@ -1,0 +1,88 @@
+//POST course
+
+{
+    "name": "",
+    "code": "",
+    "scope": "",
+    "timing": "",
+    "language": "",
+    "level": "",
+    "type": "",
+    "objective": "",
+    "teacherId": "",
+    "schedule": "",
+    "weeksId": ""
+}
+
+
+//POST student
+
+{
+	"number":"a1802157",
+	"firstName":"Bryan",
+	"lastName":"Spahr",
+	"email":"1",
+	"password":"1",
+	"courses":[
+		{
+			"courseId":"",
+			"results":0,
+			"timeSpent":0
+		}]
+}
+
+//POST teacher 
+
+{
+	
+    "firstName": "",
+    "lastName": "",
+    "email": ""
+}
+
+
+//POST weeks
+
+{
+	"no":0,
+	"lectures":[],
+	"links":[],
+	"quizzes":[]
+}
+
+//POST lecture
+
+{
+    "no": "",
+	"weekNo":0,
+    "title": "",
+    "link": "",
+    "type": ""
+}
+
+//POST link
+
+{
+    "no": "",
+	"weekNo":0,
+    "title": "",
+    "link": "",
+    "type": ""
+}
+
+//POST quiz
+
+{
+	"no": 0,
+	"weekNo":0,
+	"title": "",
+	"questions":[
+		{
+		"title":"Title 1",
+		"correctAnswer":"correct answer 1",
+		"incorrectAnswers":["incorrect answer 1", "incorrect answer2", "incorrect answer 3"
+			]
+		}
+	],
+	"type": ""
+}
