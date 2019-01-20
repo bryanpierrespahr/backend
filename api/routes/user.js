@@ -224,7 +224,7 @@ router.post('/login', (req, res) => {
             else {
                 if (user.authenticate(req.body.password)) {
                     res.status(200).json({
-                        "student": user,
+                        "user": user,
                         "token": user.getToken(),
                     })
                 }

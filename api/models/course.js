@@ -14,7 +14,8 @@ const courseSchema = mongoose.Schema({
     teacherId: String,
     schedule :{
         day: String,
-        hour: String,
+        startHour: String,
+        endHour: String,
         room: String
     },
     weeksId:[]
