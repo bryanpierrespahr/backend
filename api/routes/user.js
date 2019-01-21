@@ -42,32 +42,8 @@ router.post("/", (req, res, next) => {
     const user = new User({
         _id: new mongoose.Types.ObjectId(),
         email: req.body.email,
-        password: req.body.password,
-    });
-
-    user
-        .save()
-        .then(result => {
-            console.log(result);
-            res.status(201).json({
-                user: result
-            });
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json({
-                error: err
-            });
-        })
-});
-
-//Post user
-router.post("/dev", (req, res, next) => {
-
-    const user = new User({
-        _id: new mongoose.Types.ObjectId(),
-        email: req.body.email,
         password: passwordHash.generate(req.body.password),
+        role: req.body.role,
     });
 
     user
@@ -85,6 +61,31 @@ router.post("/dev", (req, res, next) => {
             });
         })
 });
+
+// //Post user
+// router.post("/dev", (req, res, next) => {
+//
+//     const user = new User({
+//         _id: new mongoose.Types.ObjectId(),
+//         email: req.body.email,
+//         password: passwordHash.generate(req.body.password),
+//     });
+//
+//     user
+//         .save()
+//         .then(result => {
+//             console.log(result);
+//             res.status(201).json({
+//                 user: result
+//             });
+//         })
+//         .catch(err => {
+//             console.log(err);
+//             res.status(500).json({
+//                 error: err
+//             });
+//         })
+// });
 
 //Update user by id
 router.patch("/:userId", (req, res, next) => {
@@ -143,7 +144,8 @@ router.post('/signup', (req, res) => {
 
         var user = {
             email: req.body.email,
-            password: passwordHash.generate(req.body.password)
+            password: passwordHash.generate(req.body.password),
+            role : req.body.role
         }
 
         var findUser = new Promise(function (resolve, reject) {
@@ -166,7 +168,8 @@ router.post('/signup', (req, res) => {
             var _u = new User({
                 _id: new mongoose.Types.ObjectId(),
                 email: user.email,
-                password: user.password
+                password: user.password,
+                role: user.role,
             });
             _u.save(function (err, user) {
                 if (err) {

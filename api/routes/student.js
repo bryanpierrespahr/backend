@@ -36,33 +36,33 @@ router.get("/:studentId", (req, res, next) => {
         })
 });
 
+// //Post student
+// router.post("/", (req, res, next) => {
+//
+//     const student = new Student({
+//         _id: new mongoose.Types.ObjectId(),
+//         email: req.body.email,
+//         questions: req.body.questions,
+//     });
+//
+//     student
+//         .save()
+//         .then(result => {
+//             console.log(result);
+//             res.status(201).json({
+//                 student: result
+//             });
+//         })
+//         .catch(err => {
+//             console.log(err);
+//             res.status(500).json({
+//                 error: err
+//             });
+//         })
+// });
+
 //Post student
 router.post("/", (req, res, next) => {
-
-    const student = new Student({
-        _id: new mongoose.Types.ObjectId(),
-        email: req.body.email,
-        questions: req.body.questions,
-    });
-
-    student
-        .save()
-        .then(result => {
-            console.log(result);
-            res.status(201).json({
-                student: result
-            });
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json({
-                error: err
-            });
-        })
-});
-
-//Post student
-router.post("/dev", (req, res, next) => {
 
     const student = new Student({
         _id: new mongoose.Types.ObjectId(),
