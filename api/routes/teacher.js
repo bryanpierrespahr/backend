@@ -35,6 +35,37 @@ router.get("/:teacherId", (req, res, next) => {
         })
 });
 
+//Get teacher by id
+router.get("/:teacherId", (req, res, next) => {
+    const id = req.params.teacherId;
+    Teacher.findById(id)
+        .exec()
+        .then(doc => {
+            console.log("From database " + doc);
+            res.status(200).json(doc);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json({error: err})
+        })
+});
+
+//Get teacher by email
+router.get("/email/:email", (req, res, next) => {
+    const email = req.params.email;
+    Teacher.findOne({email: email})
+        .exec()
+        .then(doc => {
+            console.log("From database " + doc);
+            res.status(200).json(doc);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json({error: err})
+        })
+});
+
+
 //Post teacher
 router.post("/", (req, res, next) => {
 
