@@ -18,7 +18,8 @@ const courseSchema = mongoose.Schema({
         endHour: String,
         room: String
     },
-    weeksId:[]
+    weeksId:[],
+    students: [],
 
 });
 

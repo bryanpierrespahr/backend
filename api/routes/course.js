@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
-
 const Course = require('../models/course');
 
 //Get course by id
@@ -53,6 +52,7 @@ router.post("/", (req, res, next) => {
         teacherId: req.body.teacherId,
         schedule : req.body.schedule,
         weeksId: req.body.weeks,
+        weeksId: req.body.students,
     });
 
     course
