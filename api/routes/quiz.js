@@ -42,7 +42,6 @@ router.post("/", (req, res, next) => {
         _id: new mongoose.Types.ObjectId(),
         weekNo: req.body.weekNo,
         no: req.body.no,
-        weekNo: req.body.weekNo,
         title: req.body.title,
         type: req.body.type,
         questions: req.body.questions,
