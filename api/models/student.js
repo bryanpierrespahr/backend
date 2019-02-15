@@ -24,6 +24,7 @@ const studentSchema = mongoose.Schema({
         globalResults: [{
             title: String,
             score: Number,
+            quizId: String,
         }],
         quizResults: [{
             quizId: String,

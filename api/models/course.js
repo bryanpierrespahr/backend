@@ -10,6 +10,7 @@ const courseSchema = mongoose.Schema({
     language: String,
     level: String,
     type: String,
+    path: String,
     objectives: String,
     teacherId: String,
     schedule :{
