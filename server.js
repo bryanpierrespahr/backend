@@ -1,7 +1,7 @@
 
 const mongoose = require("mongoose");
 const http = require('http');
-const User = require('api/models/user');
+const User = require('./api/models/user');
 //const app = require('./app');
 
 // const port = 3001;
