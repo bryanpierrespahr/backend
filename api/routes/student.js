@@ -36,30 +36,6 @@ router.get("/:studentId", (req, res, next) => {
         })
 });
 
-// //Post student
-// router.post("/", (req, res, next) => {
-//
-//     const student = new Student({
-//         _id: new mongoose.Types.ObjectId(),
-//         email: req.body.email,
-//         questions: req.body.questions,
-//     });
-//
-//     student
-//         .save()
-//         .then(result => {
-//             console.log(result);
-//             res.status(201).json({
-//                 student: result
-//             });
-//         })
-//         .catch(err => {
-//             console.log(err);
-//             res.status(500).json({
-//                 error: err
-//             });
-//         })
-// });
 
 //Post student
 router.post("/", (req, res, next) => {
@@ -175,7 +151,7 @@ router.post('/signup', (req, res) => {
         var student = {
             email: req.body.email,
             password: passwordHash.generate(req.body.password)
-        }
+        };
 
         var findStudent = new Promise(function (resolve, reject) {
             Student.findOne({
@@ -191,7 +167,7 @@ router.post('/signup', (req, res) => {
                     }
                 }
             })
-        })
+        });
 
         findStudent.then(function () {
             var _u = new Student({
@@ -216,7 +192,7 @@ router.post('/signup', (req, res) => {
                 case 500:
                     res.status(500).json({
                         "text": "Internal error"
-                    })
+                    });
                     break;
                 case 204:
                     res.status(204).json({

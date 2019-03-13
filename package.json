@@ -1,7 +1,6 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node server.js"
@@ -15,5 +14,15 @@
     "mongoose": "^5.3.11",
     "morgan": "^1.9.1",
     "password-hash": "^1.2.2"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bryanpierrespahr/backend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bryanpierrespahr/backend/issues"
+  },
+  "homepage": "https://github.com/bryanpierrespahr/backend#readme",
+  "description": ""
 }

@@ -15,6 +15,8 @@ const quizRoutes = require('./api/routes/quiz');
 const userRoutes = require('./api/routes/user');
 
 // this is our MongoDB database
+//const dbRoute = "mongodb://bryan:bryan211@ds259253.mlab.com:59253/mydb";
+//const dbRoute = "mongodb://localhost/mydb";
 const dbRoute = "mongodb://bryanspahr:Firmino.9@ds259253.mlab.com:59253/mydb";
 
 // connects our back end code with the database
