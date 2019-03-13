@@ -13,6 +13,7 @@ const linkRoutes = require('./api/routes/link');
 const lectureRoutes = require('./api/routes/lecture');
 const quizRoutes = require('./api/routes/quiz');
 const userRoutes = require('./api/routes/user');
+const indexRoute = require('./api/routes/index')
 
 // this is our MongoDB database
 //const dbRoute = "mongodb://bryan:bryan211@ds259253.mlab.com:59253/mydb";
@@ -58,5 +59,6 @@ app.use("/week", weekRoutes);
 app.use("/link", linkRoutes);
 app.use("/lecture", lectureRoutes);
 app.use("/user", userRoutes);
+app.use("/index", indexRoute);
 
 module.exports = app;
