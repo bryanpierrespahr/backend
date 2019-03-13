@@ -63,7 +63,7 @@ app.get("/user/:userid", (req, res, next) => {
             })
 });
 
-
+app.engine('html', require('ejs').renderFile);
 
 app.listen(port, ip);
 console.log('Server running on http://%s:%s', ip, port);
