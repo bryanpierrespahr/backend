@@ -1,12 +1,11 @@
-
-const mongoose = require("mongoose");
 const http = require('http');
 const User = require('./api/models/user');
-//const app = require('./app');
+
+const app = require('./app');
 
 // const port = 3001;
 
-const server = http.createServer(app);
+//const server = http.createServer(app);
 
 var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
     ip = process.env.IP || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
@@ -14,7 +13,7 @@ var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
 //server.listen(port);
 
 var express = require('express');
-var app = express();
+//var app = express();
 var morgan = require('morgan');
 
 
