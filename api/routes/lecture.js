@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
-
 const Lecture = require('../models/lecture');
 
 //Get all lectures
@@ -47,7 +46,7 @@ router.post("/", (req, res, next) => {
         type: req.body.type
     });
 
-    lecture
+    Lecture
         .save()
         .then(result => {
             console.log(result);
@@ -70,7 +69,7 @@ router.patch("/:lectureId", (req, res, next) => {
     for (const ops of req.body) {
         updateOps[ops.propName] = ops.value;
     }
-    lecture.update({
+    Lecture.update({
         _id: id
     }, {
         $set: updateOps
@@ -93,7 +92,7 @@ router.patch("/:lectureId", (req, res, next) => {
 //Delete lecture by id
 router.delete("/:lectureId", (req, res, next) => {
     const id = req.params.lectureId;
-    lecture.remove({
+    Lecture.remove({
         _id: id
     })
         .exec()

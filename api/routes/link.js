@@ -47,7 +47,7 @@ router.post("/", (req, res, next) => {
         type: req.body.type
     });
 
-    link
+    Link
         .save()
         .then(result => {
             console.log(result);
@@ -70,7 +70,7 @@ router.patch("/:linkId", (req, res, next) => {
     for (const ops of req.body) {
         updateOps[ops.propName] = ops.value;
     }
-    link.update({
+    Link.update({
         _id: id
     }, {
         $set: updateOps
@@ -93,7 +93,7 @@ router.patch("/:linkId", (req, res, next) => {
 //Delete link by id
 router.delete("/:linkId", (req, res, next) => {
     const id = req.params.linkId;
-    link.remove({
+    Link.remove({
         _id: id
     })
         .exec()
