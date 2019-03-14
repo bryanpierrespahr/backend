@@ -46,7 +46,7 @@ router.post("/", (req, res, next) => {
         type: req.body.type
     });
 
-    Lecture
+    lecture
         .save()
         .then(result => {
             console.log(result);

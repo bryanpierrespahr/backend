@@ -47,7 +47,7 @@ router.post("/", (req, res, next) => {
         questions: req.body.questions,
     });
 
-    Quiz
+    quiz
         .save()
         .then(result => {
             console.log(result);

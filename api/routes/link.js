@@ -47,7 +47,7 @@ router.post("/", (req, res, next) => {
         type: req.body.type
     });
 
-    Link
+    link
         .save()
         .then(result => {
             console.log(result);
