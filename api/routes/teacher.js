@@ -51,8 +51,8 @@ router.get("/:teacherId", (req, res, next) => {
 });
 
 //Get teacher by email
-router.get("/email/:email", (req, res, next) => {
-    const email = req.params.email;
+router.get("/email/:mail", (req, res, next) => {
+    const email = req.params.mail;
     Teacher.findOne({email: email})
         .exec()
         .then(doc => {
