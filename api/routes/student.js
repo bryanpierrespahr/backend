@@ -149,8 +149,12 @@ router.post('/signup', (req, res) => {
     } else {
 
         var student = {
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            number: req.body.number,
             email: req.body.email,
-            password: passwordHash.generate(req.body.password)
+            password: passwordHash.generate(req.body.password),
+            course : req.body.courses
         };
 
         var findStudent = new Promise(function (resolve, reject) {
