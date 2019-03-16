@@ -154,7 +154,7 @@ router.post('/signup', (req, res) => {
             number: req.body.number,
             email: req.body.email,
             password: passwordHash.generate(req.body.password),
-            course : req.body.courses
+            courses : req.body.courses
         };
 
         var findStudent = new Promise(function (resolve, reject) {
@@ -176,8 +176,12 @@ router.post('/signup', (req, res) => {
         findStudent.then(function () {
             var _u = new Student({
                 _id: new mongoose.Types.ObjectId(),
+                firstName : student.firstName,
+                lastName : student.lastName,
+                number : student.number,
                 email: student.email,
-                password: student.password
+                password: student.password,
+                courses : student.courses,
             });
             _u.save(function (err, student) {
                 if (err) {
