@@ -191,7 +191,8 @@ router.post('/signup', (req, res) => {
                 } else {
                     res.status(200).json({
                         "text": "Success",
-                        "token": student.getToken()
+                        "token": student.getToken(),
+                        "student": student
                     })
                 }
             })
