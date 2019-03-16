@@ -8,9 +8,9 @@ router.get("/:courseId", (req, res, next) => {
     const id = req.params.courseId;
     Course.findById(id)
         .exec()
-        .then(doc => {
-            console.log(doc)
-            res.status(200).json(doc);
+        .then(data => {
+            console.log(data)
+            res.status(200).json(data);
         })
         .catch(err => {
             console.log(err);
@@ -35,7 +35,6 @@ router.get("/", (req, res, next) => {
 });
 
 
-
 //Post course
 router.post("/", (req, res, next) => {
 
@@ -51,7 +50,7 @@ router.post("/", (req, res, next) => {
         path: req.body.path,
         objectives: req.body.objectives,
         teacherId: req.body.teacherId,
-        schedule : req.body.schedule,
+        schedule: req.body.schedule,
         weeksId: req.body.weeks,
         weeksId: req.body.students,
     });
