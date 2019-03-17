@@ -7,7 +7,8 @@ const lectureSchema = mongoose.Schema({
     no: Number,
     title: String,
     link: String,
-    type: String
+    type: String,
+    timeSpent: Number,
 });
 
 module.exports = mongoose.model('Lecture', lectureSchema);

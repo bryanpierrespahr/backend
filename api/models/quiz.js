@@ -13,7 +13,8 @@ const quizSchema = mongoose.Schema({
         incorrectAnswers:[],
         nbCorrect: Number,
         nbIncorrect: Number,
-    }]
+    }],
+    timeSpent: Number,
 
 });
 
