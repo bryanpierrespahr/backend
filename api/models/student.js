@@ -34,7 +34,10 @@ const studentSchema = mongoose.Schema({
             correctAnswers: [],
         }],
         timeSpent: Number,
-        done: [],
+        done: [{
+            id: String,
+            timeSpent: Number
+        }],
         percentage: Number
     }]
 });
