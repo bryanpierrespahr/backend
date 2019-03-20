@@ -15,7 +15,8 @@ const quizSchema = mongoose.Schema({
         nbIncorrect: Number,
     }],
     timeSpent: Number,
-    timesOpened: Number
+    timesOpened: Number,
+    uniqueTimesOpened: Number,
 
 });
 
