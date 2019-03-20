@@ -9,6 +9,8 @@ const linkSchema = mongoose.Schema({
     link: String,
     type: String,
     timeSpent: Number,
+    timesOpened: Number,
+    uniqueTimesOpened: Number,
 });
 
 module.exports = mongoose.model('Link', linkSchema);
