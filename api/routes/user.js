@@ -21,9 +21,11 @@ router.get("/", (req, res, next) => {
         });
 });
 
-//Get user by id
+//Get method to retrieve a user from the database by its id
 router.get("/:userid", (req, res, next) => {
+
     const id = req.params.userid;
+
     User.findById(id)
         .exec()
         .then(doc => {
@@ -36,7 +38,7 @@ router.get("/:userid", (req, res, next) => {
         })
 });
 
-//Post user
+//Post method to save a new user in the database
 router.post("/", (req, res, next) => {
 
     const user = new User({
